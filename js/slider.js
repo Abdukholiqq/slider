@@ -1,21 +1,25 @@
- 
-const slider = tns ({
-    container: '.my-slider',
+var swiper = new Swiper('.swiper-initialize', {
+    slidesPerView: 5,
+    spaceBetween: 20,
     loop: true,
-    items: 1,
-    slideBy: 'page',
-    nav: false,
     autoplay: true,
-    speed: 400,
-    autoplayButtonOutput: false,
-    mouseDrag: true,
-    lazyload: true,
-    controlsContainer: "#customize-controls",
-    responsive: {
-        640: {
-            items: 2 },
+    breakpoints: {
+        1920: {
+            slidesPerView: 5
+        },
+        992: {
+            slidesPerView: 3
+        },
+        320: {
+            slidesPerView: 2
+        }
+    },
 
-
-        768: {
-            items: 3 } } });
-        
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+        el: ".swiper-paganation",
+    }
+});
